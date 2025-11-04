@@ -9,6 +9,7 @@ import com.velocitypowered.api.proxy.ConnectionRequestBuilder;
 import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
 import com.velocitypowered.api.proxy.server.RegisteredServer;
+import io.github.thebestandgreatest.utils.ConfigManager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -54,10 +55,10 @@ public class ServerAutoJoin {
     public ServerAutoJoin(ProxyServer server, Logger logger, @DataDirectory Path dataDirectory) {
         this.server = server;
         this.logger = logger;
-        ConfigReader configReader = new ConfigReader(logger, dataDirectory.toString());
-        Map<ConfigReader.ConfigKeys, String> config = configReader.readConfig();
-        ENTRY_SERVER_NAME = config.get(ConfigReader.ConfigKeys.ENTRY_SERVER);
-        REDIRECT_SERVER_NAME = config.get(ConfigReader.ConfigKeys.REDIRECT_SERVER);
+        ConfigManager configReader = new ConfigManager(logger, dataDirectory.toString());
+        Map<ConfigManager.ConfigKeys, String> config = configReader.readConfig();
+        ENTRY_SERVER_NAME = config.get(ConfigManager.ConfigKeys.ENTRY_SERVER);
+        REDIRECT_SERVER_NAME = config.get(ConfigManager.ConfigKeys.REDIRECT_SERVER);
     }
 
     /**

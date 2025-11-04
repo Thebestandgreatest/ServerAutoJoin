@@ -1,0 +1,4 @@
+#name of the server that players initially join, a limbo or hub server of some kind",
+entry_server = "limbo"
+#name of the server that will take too long to startup
+redirect_server = "lobby"

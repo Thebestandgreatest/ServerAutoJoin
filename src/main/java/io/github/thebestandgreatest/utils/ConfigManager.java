@@ -1,4 +1,4 @@
-package io.github.thebestandgreatest;
+package io.github.thebestandgreatest.utils;
 
 import org.slf4j.Logger;
 
@@ -13,12 +13,12 @@ import java.util.*;
 
 /**
  * Helper class to generate and read the config file, implements a very basic toml parser to only rely on the java
- * standard library, and the logger providied by impulse
+ * standard library, and the logger provided by impulse
  *
  * @author Thebestandgreatest
  * @version 0.1.0
  */
-public class ConfigReader {
+public class ConfigManager {
     private final Logger logger;
     private final File configFile;
 
@@ -28,7 +28,7 @@ public class ConfigReader {
      * @param logger          The logger to log to
      * @param serverDirectory The directory of the server to read the config from
      */
-    public ConfigReader(Logger logger, String serverDirectory) {
+    public ConfigManager(Logger logger, String serverDirectory) {
         this.logger = logger;
         Path dir = Paths.get(serverDirectory);
         this.configFile = dir.resolve("config.toml").toFile();
